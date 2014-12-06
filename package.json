@@ -1,0 +1,21 @@
+{
+  "name": "big-red-button",
+  "description": "ASAP coffee",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chr92/big-red-button.git"
+  },
+  "scripts": {
+  },
+  "version": "0.0.1",
+  "dependencies": {
+    "pi-pins": "~1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+      "node": "0.10.22"
+  }
+}
