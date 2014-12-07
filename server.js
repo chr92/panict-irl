@@ -2,10 +2,12 @@ var  ledToggle, pressCount;
 //provision the gpio pins 22 for the led output and 17 for the button input
 var led= require("pi-pins").connect(5),
     button = require("pi-pins").connect(6);
+    piezo = require("pi-pins").connect(13);
 
-//set the pin mode,  setting pin 22 as an output and 17 as an input
+//set pin modes for button, buzzer and LED
 button.mode('out');
 led.mode('out');
+piezo.mode('out');
 
 //set the initial value of the LED to be off.
 ledToggle = false;
@@ -16,9 +18,11 @@ led.value(false);
 button.on('fall', function () {
     if (ledToggle) {
         led.value(false);
+        piezo.value(false);
         ledToggle = !ledToggle;
     } else {
         led.value(true);
+        piezo.value(true);
         ledToggle = !ledToggle;
         console.log("button pressed: "+ (++pressCount) +" time(s)");
     }
