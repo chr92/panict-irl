@@ -10,9 +10,9 @@ led.mode('out');
 //set the initial value of the LED to be off.
 ledToggle = false;
 pressCount= 0;
-led.value(true);
+led.value(false);
 
-//look for a button press event and switch on the LED for 2 seconds when this happens.
+//look for a button press event, keep LED on while button is pressed.
 button.on('fall', function () {
     if (ledToggle) {
         led.value(false);
