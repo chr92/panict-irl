@@ -8,6 +8,7 @@ var led= require("pi-pins").connect(5),
 button.mode('out');
 led.mode('out');
 piezo.mode('out');
+piezo.value(10);
 
 //set the initial value of the LED to be off.
 ledToggle = false;
