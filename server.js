@@ -7,8 +7,6 @@ var led= require("pi-pins").connect(5),
 //set pin modes for button, buzzer and LED.
 button.mode('out');
 led.mode('out');
-piezo.mode('out');
-piezo.value(10);
 
 //set the initial value of the LED to be off.
 ledToggle = false;
@@ -19,11 +17,9 @@ led.value(false);
 button.on('fall', function () {
     if (ledToggle) {
         led.value(false);
-        piezo.value(false);
         ledToggle = !ledToggle;
     } else {
         led.value(true);
-        piezo.value(true);
         ledToggle = !ledToggle;
         console.log("button pressed: "+ (++pressCount) +" time(s)");
     }
