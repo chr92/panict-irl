@@ -4,7 +4,7 @@ var led= require("pi-pins").connect(5),
     button = require("pi-pins").connect(6);
     piezo = require("pi-pins").connect(13);
 
-//set pin modes for button, buzzer and LED
+//set pin modes for button, buzzer and LED.
 button.mode('out');
 led.mode('out');
 piezo.mode('out');
