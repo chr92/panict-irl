@@ -14,12 +14,12 @@ led.value(true);
 
 //look for a button press event and switch on the LED for 2 seconds when this happens.
 button.on('fall', function () {
-    console.log("button pressed: "+ (++pressCount) +" time(s)");
     if (ledToggle) {
         led.value(false);
         ledToggle = !ledToggle;
     } else {
         led.value(true);
         ledToggle = !ledToggle;
+        console.log("button pressed: "+ (++pressCount) +" time(s)");
     }
 });
